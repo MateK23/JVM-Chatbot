@@ -51,7 +51,7 @@ public class Chatbot {
                     Print("Good bye.");
                     break;
                 default:
-                    Print("Sorry, I can't respond to that, try something else");
+                    Print("Sorry, I wasn't designed to answer that");
                     Chat(ChatWaitForInput());
             }
         }
@@ -100,7 +100,7 @@ public class Chatbot {
 
     private void ChatRespondToQuestion(String answer){
         answer = answer.toLowerCase();
-        if (answer.equals("yes")){
+        if (answer.equals("yes")||answer.equals("y")){
             System.out.println("Nice to meet you "+name+". I am Chatbot, homework for first lecture of JVM.");
             identified = true;
             saidHello = true;
@@ -112,7 +112,7 @@ public class Chatbot {
 
             }
         }
-        else if (answer.equals("no")){
+        else if (answer.equals("no")||answer.equals("n")){
             ChatAskName();
         }
         else {
